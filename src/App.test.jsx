@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 
-import App, { sum } from "./App";
+import App, { Counter, sum } from "./App";
 import { fireEvent, render, screen } from "@testing-library/react";
 
 import React from "react";
@@ -30,6 +30,27 @@ describe("App", () => {
     fireEvent.change(screen.getByRole("textbox"), { target: { value: "" } });
 
     expect(screen.queryByText("Search")).toBeNull();
+  });
+});
+
+describe("Counter", () => {
+  it("should fire callbackk handler once", () => {
+    const onChange = jest.fn();
+    render(<Counter counter={0} onChange={onChange} />);
+
+    fireEvent.change(screen.getByRole("textbox"), {
+      target: { value: "JavaScript" },
+    });
+
+    expect(onChange).toHaveBeenCalledTimes(1);
+  });
+
+  it("should fire callbackk handler length of text size times", async () => {
+    const onChange = jest.fn();
+    render(<Counter counter={0} onChange={onChange} />);
+
+    await userEvent.type(screen.getByRole("textbox"), "JavaScript");
+    expect(onChange).toHaveBeenCalledTimes(10);
   });
 });
 

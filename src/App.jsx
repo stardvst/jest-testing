@@ -40,10 +40,10 @@ const App = () => {
         dispatch({ type: "SET_ERROR" });
       });
 
-     (async () => {
-       const user = await getUser();
-       setUser(user);
-     })();
+    (async () => {
+      const user = await getUser();
+      setUser(user);
+    })();
   }, []);
 
   return (
@@ -72,10 +72,10 @@ const App = () => {
   );
 };
 
-export const Counter = ({ counter }) => (
+export const Counter = ({ counter, onChange = null }) => (
   <div>
     <p>{counter}</p>
-    <input type="text"/>
+    <input type="text" onChange={onChange} />
   </div>
 );
 

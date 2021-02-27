@@ -10,6 +10,7 @@ exports[`App snapshot renders 1`] = `
       0
     </p>
     <input
+      onChange={null}
       type="text"
     />
   </div>
@@ -38,6 +39,7 @@ exports[`Counter snapshot renders 1`] = `
     1
   </p>
   <input
+    onChange={null}
     type="text"
   />
 </div>
