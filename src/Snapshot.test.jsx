@@ -1,4 +1,4 @@
-import App, { Counter, dataReducer, sum } from "./App";
+import App, { Counter, dataReducer } from "./App";
 
 import React from "react";
 import renderer from "react-test-renderer";
@@ -49,11 +49,5 @@ describe("Counter", () => {
     const component = renderer.create(<Counter counter={1} />);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-  });
-});
-
-describe("sum", () => {
-  test("should sum two values", () => {
-    expect(sum(2, 4)).toBe(6);
   });
 });
