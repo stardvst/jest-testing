@@ -6,11 +6,12 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 
 describe("App", () => {
-  test("should render application", () => {
+  test("should render application", async () => {
     render(<App />);
     //screen.debug();
 
-    expect(screen.getByText("My Counter")).toBeInTheDocument();
+    expect(screen.queryByText(/Counter/)).toBeNull();
+    expect(await screen.findByText(/Counter/)).toBeInTheDocument();
     //screen.getByRole("");
 
     expect(screen.queryByText("Search")).toBeNull();

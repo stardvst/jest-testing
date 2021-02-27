@@ -21,9 +21,14 @@ const initialData = {
   error: null,
 };
 
+const getUser = () => {
+  return Promise.resolve({ id: 1, name: "Robin" });
+};
+
 const App = () => {
   const [counter, setCounter] = React.useState(0);
   const [data, dispatch] = React.useReducer(dataReducer, initialData);
+  const [user, setUser] = React.useState(null);
 
   React.useEffect(() => {
     axios
@@ -34,11 +39,16 @@ const App = () => {
       .catch(() => {
         dispatch({ type: "SET_ERROR" });
       });
+
+     (async () => {
+       const user = await getUser();
+       setUser(user);
+     })();
   }, []);
 
   return (
     <div>
-      <h1>My Counter</h1>
+      <h1>{user ? `${user.name}s Counter` : ""}</h1>
       <Counter counter={counter} />
 
       <button type="button" onClick={() => setCounter(counter + 1)}>
