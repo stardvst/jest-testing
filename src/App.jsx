@@ -75,6 +75,7 @@ const App = () => {
 export const Counter = ({ counter }) => (
   <div>
     <p>{counter}</p>
+    <input type="text"/>
   </div>
 );
 
