@@ -68,4 +68,6 @@ export const Counter = ({ counter }) => (
   </div>
 );
 
+export const sum = (a, b) => a + b;
+
 export default hot(module)(App);

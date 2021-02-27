@@ -1,3 +1,4 @@
 {
-  "testRegex": "((\\.|/*.)(test))\\.jsx?$"
+  "testRegex": "((\\.|/*.)(test))\\.jsx?$",
+  "verbose": true
 }
