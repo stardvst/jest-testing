@@ -1,3 +1,5 @@
+import "@testing-library/jest-dom";
+
 import App, { sum } from "./App";
 import { render, screen } from "@testing-library/react";
 
@@ -6,7 +8,12 @@ import React from "react";
 describe("App", () => {
   test("should render application", () => {
     render(<App />);
-    screen.debug();
+    //screen.debug();
+
+    expect(screen.getByText("My Counter")).toBeInTheDocument();
+    //screen.getByRole("");
+
+    expect(screen.queryByText("Search")).toBeNull();
   });
 });
 
