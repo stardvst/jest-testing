@@ -1,5 +1,8 @@
 {
   "projects": {
     "default": "jest-testing"
+  },
+  "hosting": {
+    "public": "public"
   }
 }
