@@ -23,7 +23,7 @@ function DataFetch() {
         Fetch Stories
       </button>
 
-      {error && <span>Something went wrong...</span>}
+      {error && <span>Still works...</span>}
 
       <ul>
         {stories.map((story) => (
