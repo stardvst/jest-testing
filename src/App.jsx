@@ -1,6 +1,5 @@
 //import "./App.css";
 
-import DataFetch from "./DataFetch";
 import React from "react";
 import axios from "axios";
 import { hot } from "react-hot-loader";
